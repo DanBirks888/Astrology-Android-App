@@ -13,8 +13,6 @@ import com.danbirks.astrologyandroidapp.R;
 import com.danbirks.astrologyandroidapp.model.AstralBody;
 import com.jacksonandroidnetworking.JacksonParserFactory;
 
-import java.util.Arrays;
-
 public class Sun extends AppCompatActivity {
 
     TextView textView;
@@ -34,7 +32,7 @@ public class Sun extends AppCompatActivity {
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
-                .getAsObjectList(AstralBody.class, new ParsedRequestListener<AstralBody>() {
+                .getAsObject(AstralBody.class, new ParsedRequestListener<AstralBody>() {
                     @Override
                     public void onResponse(AstralBody astralBody) {
                         // do anything with response
@@ -45,10 +43,7 @@ public class Sun extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         // handle error
-                        System.out.println("Error" + anError.getErrorBody());
-                        System.out.println("Error" + anError.getErrorDetail());
-                        System.out.println("Error" + anError.getErrorCode());
-                        System.out.println("Error" + Arrays.toString(anError.getStackTrace()));
+                        System.out.println("Error" + anError.getMessage());
                     }
                 });
     }
