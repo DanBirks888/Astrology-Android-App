@@ -1,27 +1,22 @@
 package com.danbirks.astrologyandroidapp.planets;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.danbirks.astrologyandroidapp.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.danbirks.astrologyandroidapp.model.AstralBody;
 
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Sun extends AppCompatActivity {
 
@@ -47,35 +42,24 @@ public class Sun extends AppCompatActivity {
     }
 
     private void jsonParse() {
-        String url = "localhost:8080/astrals/planet/Sun";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @RequiresApi(api = Build.VERSION_CODES.N)
+        AndroidNetworking.get("http://localhost:8080/astrals/planet/Sun")
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(AstralBody.class, new ParsedRequestListener<List<AstralBody>>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("");
+                    public void onResponse(List<AstralBody> astralBodies) {
+                        // do anything with response
+                        System.out.println("your big!");
 
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject sun = jsonArray.getJSONObject(i);
-
-                                String astralBody = sun.getString("astralBody");
-                                JSONArray slm = sun.getJSONArray("singleLineMeaning");
-
-                                List<String> asdf = IntStream.range(0, slm.length())
-                                        .mapToObj()
-
-                                String attributes = sun.getString("attributes");
-
-                                mTextViewResult.append(astralBody + "\n " + attributes + "\n\n");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
                     }
-                }, Throwable::printStackTrace);
-        mQueue.add(request);
+
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
     }
 
 
