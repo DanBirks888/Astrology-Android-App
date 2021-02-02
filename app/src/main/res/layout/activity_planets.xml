@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/planetswallpaper"
+    android:stretchColumns="*"
+    android:padding="30dp"
+    tools:context=".Planets">
+
+    <TableRow
+        android:id="@+id/firstRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/sun"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/sun" />
+
+        <ImageButton
+            android:id="@+id/moon"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/moon" />
+
+        <ImageButton
+            android:id="@+id/mercury"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/mercury" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/secondRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/venus"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/venus" />
+
+        <ImageButton
+            android:id="@+id/mars"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/mars" />
+
+        <ImageButton
+            android:id="@+id/jupiter"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/jupiter" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/thirdRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/saturn"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/saturn" />
+
+        <ImageButton
+            android:id="@+id/uranus"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/uranus" />
+
+        <ImageButton
+            android:id="@+id/neptune"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/neptune" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/fourthRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/pluto"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/venus" />
+
+        <ImageButton
+            android:id="@+id/chiron"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/mars" />
+
+        <ImageButton
+            android:id="@+id/juno"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/juno" />
+    </TableRow>
+
+
+</TableLayout>
