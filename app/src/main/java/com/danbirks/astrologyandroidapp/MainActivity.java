@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public void planets(View view) {
         Intent intent = new Intent(this, Planets.class);
         startActivity(intent);
+
     }
 }

@@ -17,9 +17,10 @@
 
         <ImageButton
             android:id="@+id/sun"
-            android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/sun" />
+            android:layout_height="100dp"
+            android:background="@drawable/sun"
+            android:onClick="sun" />
 
         <ImageButton
             android:id="@+id/moon"
