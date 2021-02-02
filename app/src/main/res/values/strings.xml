@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Astrology Android App</string>
+    <string name="planets">Planets</string>
+    <string name="signs">Signs</string>
+    <string name="houses">Houses</string>
+    <string name="aspects">Aspects</string>
+</resources>
