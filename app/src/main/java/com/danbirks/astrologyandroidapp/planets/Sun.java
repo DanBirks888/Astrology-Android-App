@@ -1,63 +1,54 @@
 package com.danbirks.astrologyandroidapp.planets;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.danbirks.astrologyandroidapp.R;
 import com.danbirks.astrologyandroidapp.model.AstralBody;
+import com.jacksonandroidnetworking.JacksonParserFactory;
 
-import java.util.List;
+import java.util.Arrays;
 
 public class Sun extends AppCompatActivity {
 
-    private TextView mTextViewResult;
-    private RequestQueue mQueue;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sun);
-
-        mTextViewResult = findViewById(R.id.sun_data);
-        ImageButton buttonParse = findViewById(R.id.sun);
-
-        mQueue = Volley.newRequestQueue(this);
-
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jsonParse();
-            }
-        });
+        AndroidNetworking.initialize(getApplicationContext());
+        AndroidNetworking.setParserFactory(new JacksonParserFactory());
+        jsonParse();
     }
 
     private void jsonParse() {
 
-        AndroidNetworking.get("http://localhost:8080/astrals/planet/Sun")
+        AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/Sun")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
-                .getAsObjectList(AstralBody.class, new ParsedRequestListener<List<AstralBody>>() {
+                .getAsObjectList(AstralBody.class, new ParsedRequestListener<AstralBody>() {
                     @Override
-                    public void onResponse(List<AstralBody> astralBodies) {
+                    public void onResponse(AstralBody astralBody) {
                         // do anything with response
-                        System.out.println("your big!");
-
+                        System.out.println("Working!");
+                        System.out.println(astralBody.toString());
                     }
 
                     @Override
                     public void onError(ANError anError) {
                         // handle error
+                        System.out.println("Error" + anError.getErrorBody());
+                        System.out.println("Error" + anError.getErrorDetail());
+                        System.out.println("Error" + anError.getErrorCode());
+                        System.out.println("Error" + Arrays.toString(anError.getStackTrace()));
                     }
                 });
     }
