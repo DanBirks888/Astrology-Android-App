@@ -15,19 +15,16 @@ import com.jacksonandroidnetworking.JacksonParserFactory;
 
 public class Sun extends AppCompatActivity {
 
-    TextView textView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sun);
         AndroidNetworking.initialize(getApplicationContext());
         AndroidNetworking.setParserFactory(new JacksonParserFactory());
-        jsonParse();
+        jsonParse(findViewById(R.id.sun_data));
     }
 
-    private void jsonParse() {
-
+    private void jsonParse(TextView tv) {
         AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/Sun")
                 .setTag(this)
                 .setPriority(Priority.LOW)
@@ -35,14 +32,12 @@ public class Sun extends AppCompatActivity {
                 .getAsObject(AstralBody.class, new ParsedRequestListener<AstralBody>() {
                     @Override
                     public void onResponse(AstralBody astralBody) {
-                        // do anything with response
                         System.out.println("Working!");
-                        System.out.println(astralBody.toString());
+                        tv.setText(astralBody.toString());
                     }
 
                     @Override
                     public void onError(ANError anError) {
-                        // handle error
                         System.out.println("Error" + anError.getMessage());
                     }
                 });

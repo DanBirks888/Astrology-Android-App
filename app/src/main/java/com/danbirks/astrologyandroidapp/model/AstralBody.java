@@ -21,4 +21,14 @@ public class AstralBody {
 
     public AstralBody() {
     }
+
+    @androidx.annotation.NonNull
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getAstralBody()).append("\n");
+        for (String s : singleLineMeaning) sb.append(s).append(" ");
+        sb.append("\n").append(getAttributes());
+        return sb.toString();
+    }
 }
