@@ -20,7 +20,6 @@ public class OneElement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_element);
         String planet = getIntent().getExtras().getString("planet");
-        System.out.println(planet + "!!!!!!!!!!!!!!");
         AndroidNetworking.initialize(getApplicationContext());
         AndroidNetworking.setParserFactory(new JacksonParserFactory());
         jsonParse(
@@ -32,6 +31,7 @@ public class OneElement extends AppCompatActivity {
     }
 
     private void jsonParse(String planet, TextView title, ImageView icon, TextView slm, TextView data) {
+        System.out.println("???????????????????" + "INSIDE THE JSONPARSE");
         AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/" + planet)
                 .setTag(this)
                 .setPriority(Priority.LOW)
@@ -39,12 +39,10 @@ public class OneElement extends AppCompatActivity {
                 .getAsObject(AstralBody.class, new ParsedRequestListener<AstralBody>() {
                     @Override
                     public void onResponse(AstralBody astralBody) {
-                        System.out.println("Working!");
                         title.setText(astralBody.getAstralBody());
-                        icon.setImageResource(getResources().getIdentifier(planet, planet, getPackageName()));
+                        icon.setImageResource(getResources().getIdentifier(planet, "planet", getPackageName()));
                         slm.setText(astralBody.getSingleLineMeaning().toString());
                         data.setText(astralBody.getAttributes());
-//                        tv.setText(astralBody.toString());
                     }
 
                     @Override

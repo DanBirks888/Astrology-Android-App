@@ -25,65 +25,83 @@
 
         <ImageButton
             android:id="@+id/moon"
-            android:layout_height="100dp"
+            android:tag="moon"
             android:layout_width="100dp"
-            android:background="@drawable/moon" />
+            android:layout_height="100dp"
+            android:background="@drawable/moon"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/mercury"
-            android:layout_height="100dp"
+            android:tag="mercury"
             android:layout_width="100dp"
-            android:background="@drawable/mercury" />
+            android:layout_height="100dp"
+            android:background="@drawable/mercury"
+            android:onClick="planet" />
     </TableRow>
 
     <TableRow
         android:id="@+id/secondRow"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp">
+        android:paddingBottom="50dp"
+        android:onClick="planet">
 
         <ImageButton
             android:id="@+id/venus"
+            android:tag="venus"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/venus" />
+            android:background="@drawable/venus"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/mars"
+            android:tag="mars"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/mars" />
+            android:background="@drawable/mars"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/jupiter"
+            android:tag="jupiter"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/jupiter" />
+            android:background="@drawable/jupiter"
+            android:onClick="planet" />
     </TableRow>
 
     <TableRow
         android:id="@+id/thirdRow"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp">
+        android:paddingBottom="50dp"
+        android:onClick="planet">
 
         <ImageButton
             android:id="@+id/saturn"
+            android:tag="saturn"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/saturn" />
+            android:background="@drawable/saturn"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/uranus"
+            android:tag="uranus"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/uranus" />
+            android:background="@drawable/uranus"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/neptune"
+            android:tag="neptune"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/neptune" />
+            android:background="@drawable/neptune"
+            android:onClick="planet" />
     </TableRow>
 
     <TableRow
@@ -94,21 +112,27 @@
 
         <ImageButton
             android:id="@+id/pluto"
+            android:tag="pluto"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/venus" />
+            android:background="@drawable/pluto"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/chiron"
+            android:tag="chiron"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/mars" />
+            android:background="@drawable/chiron"
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/juno"
+            android:tag="juno"
             android:layout_height="100dp"
             android:layout_width="100dp"
-            android:background="@drawable/juno" />
+            android:background="@drawable/juno"
+            android:onClick="planet" />
     </TableRow>
 
 

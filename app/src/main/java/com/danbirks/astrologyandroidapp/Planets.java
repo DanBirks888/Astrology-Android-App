@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Planets extends AppCompatActivity {
 
 
@@ -16,7 +18,7 @@ public class Planets extends AppCompatActivity {
     }
 
     public void planet(View view) {
-        String planet = view.getTag().toString();
+        String planet = StringUtils.capitalize(view.getTag().toString());
         Intent intent = new Intent(this, OneElement.class);
         intent.putExtra("planet", planet);
         startActivity(intent);
