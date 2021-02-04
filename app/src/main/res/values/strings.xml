@@ -4,4 +4,9 @@
     <string name="signs">Signs</string>
     <string name="houses">Houses</string>
     <string name="aspects">Aspects</string>
+    <string name="planeticon">Planet_Icon</string>
+    <string name="title">Title</string>
+    <string name="icon">Icon</string>
+    <string name="single_line_meaning">Single_Line_Meaning</string>
+    <string name="body_of_text">BodyOfText</string>
 </resources>

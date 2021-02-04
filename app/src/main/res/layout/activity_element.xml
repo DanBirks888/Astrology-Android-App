@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/sunwallpaper"
+    android:padding="50dp"
+    tools:context=".OneElement">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/title"
+            android:padding="23dp"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/planetwhite" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/singleLineMeaning"
+            android:text="@string/single_line_meaning"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            android:padding="8dp" />
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/body_of_text"
+            android:paddingVertical="20dp"
+            android:textColor="@color/white" />
+
+    </ScrollView>
+
+</TableLayout>

@@ -1,6 +1,7 @@
-package com.danbirks.astrologyandroidapp.planets;
+package com.danbirks.astrologyandroidapp;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,23 +10,29 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
-import com.danbirks.astrologyandroidapp.R;
 import com.danbirks.astrologyandroidapp.model.AstralBody;
 import com.jacksonandroidnetworking.JacksonParserFactory;
 
-public class Sun extends AppCompatActivity {
+public class OneElement extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sun);
+        setContentView(R.layout.activity_element);
+        String planet = getIntent().getExtras().getString("planet");
+        System.out.println(planet + "!!!!!!!!!!!!!!");
         AndroidNetworking.initialize(getApplicationContext());
         AndroidNetworking.setParserFactory(new JacksonParserFactory());
-        jsonParse(findViewById(R.id.sun_data));
+        jsonParse(
+                planet,
+                findViewById(R.id.title),
+                (ImageView) (findViewById(R.id.icon)),
+                findViewById(R.id.singleLineMeaning),
+                findViewById(R.id.data));
     }
 
-    private void jsonParse(TextView tv) {
-        AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/Sun")
+    private void jsonParse(String planet, TextView title, ImageView icon, TextView slm, TextView data) {
+        AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/" + planet)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -33,7 +40,11 @@ public class Sun extends AppCompatActivity {
                     @Override
                     public void onResponse(AstralBody astralBody) {
                         System.out.println("Working!");
-                        tv.setText(astralBody.toString());
+                        title.setText(astralBody.getAstralBody());
+                        icon.setImageResource(getResources().getIdentifier(planet, planet, getPackageName()));
+                        slm.setText(astralBody.getSingleLineMeaning().toString());
+                        data.setText(astralBody.getAttributes());
+//                        tv.setText(astralBody.toString());
                     }
 
                     @Override

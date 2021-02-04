@@ -6,8 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.danbirks.astrologyandroidapp.planets.Sun;
-
 public class Planets extends AppCompatActivity {
 
 
@@ -17,9 +15,12 @@ public class Planets extends AppCompatActivity {
         setContentView(R.layout.activity_planets);
     }
 
-    public void sun(View view) {
-        Intent intent = new Intent(this, Sun.class);
+    public void planet(View view) {
+        String planet = view.getTag().toString();
+        Intent intent = new Intent(this, OneElement.class);
+        intent.putExtra("planet", planet);
         startActivity(intent);
     }
+
 
 }

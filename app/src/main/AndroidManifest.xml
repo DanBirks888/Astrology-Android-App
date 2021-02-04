@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.AstrologyAndroidApp">
-        <activity android:name=".planets.Sun" />
+        <activity android:name=".OneElement" />
         <activity android:name=".Planets" />
         <activity android:name=".MainActivity">
             <intent-filter>

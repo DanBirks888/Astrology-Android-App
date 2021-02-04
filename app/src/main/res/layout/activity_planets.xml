@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/planetswallpaper"
+    android:background="@drawable/planetswallpaperblack"
     android:stretchColumns="*"
     android:padding="30dp"
     tools:context=".Planets">
@@ -17,10 +17,11 @@
 
         <ImageButton
             android:id="@+id/sun"
+            android:tag="sun"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/sun"
-            android:onClick="sun" />
+            android:onClick="planet" />
 
         <ImageButton
             android:id="@+id/moon"
