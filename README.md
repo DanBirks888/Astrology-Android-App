@@ -67,4 +67,13 @@ AS = Android Studio
 
 ### Single Planet Data
 ![AstroAppSun](https://user-images.githubusercontent.com/63508057/106888259-343b3380-66de-11eb-8508-33c1a459e0cf.png)
+
+### Signs Activity
+![AstroAppSigns](https://user-images.githubusercontent.com/63508057/107042710-f6134200-67b9-11eb-83ef-ce691148744d.png)
+
+### Single Sign Data
+![AstroAppAries](https://user-images.githubusercontent.com/63508057/107042714-f7446f00-67b9-11eb-8dd8-902ca4927a3b.png)
+
+### All House Data
+![AstroAppHouse](https://user-images.githubusercontent.com/63508057/107042718-f8759c00-67b9-11eb-9706-f940e9c29284.png)
  
