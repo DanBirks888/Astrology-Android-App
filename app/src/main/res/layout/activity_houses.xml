@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:stretchColumns="2"
+    android:background="@drawable/housewallpaper"
+    android:padding="50dp"
+    tools:context=".restparser.HouseElement">
+
+    <ScrollView
+        android:id="@+id/housenumber"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/body_of_text"
+        android:justificationMode="inter_word"
+        android:paddingVertical="20dp"
+        android:textColor="@color/white" />
+
+</TableLayout>

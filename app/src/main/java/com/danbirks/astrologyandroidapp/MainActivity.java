@@ -24,4 +24,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void house(View view) {
+        Intent intent = new Intent(this, Houses.class);
+        startActivity(intent);
+    }
+
+
 }

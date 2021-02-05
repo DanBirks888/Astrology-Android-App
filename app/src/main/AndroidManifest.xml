@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AstrologyAndroidApp"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Houses"></activity>
+        <activity android:name=".restparser.HouseElement" />
         <activity android:name=".Signs" />
         <activity android:name=".restparser.PlanetElement" />
+        <activity android:name=".restparser.SignElement" />
         <activity android:name=".Planets" />
         <activity android:name=".MainActivity">
             <intent-filter>

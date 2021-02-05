@@ -3,24 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:stretchColumns="2"
     android:background="@drawable/pisceswallpaper"
     android:padding="50dp"
-    tools:context=".restparser.PlanetElement">
+    tools:context=".restparser.SignElement">
 
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="fill_parent">
 
         <TextView
-            android:id="@+id/title"
-            android:text="@string/title"
+            android:id="@+id/signtitle"
             android:padding="23dp"
             android:layout_width="wrap_content"
             android:textColor="@color/white"
             android:textSize="40sp" />
 
         <ImageView
-            android:id="@+id/icon"
+            android:id="@+id/signicon"
             android:layout_width="100dp"
             android:layout_height="100dp" />
 
@@ -32,8 +32,22 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/singleLineMeaning"
-            android:text="@string/single_line_meaning"
+            android:id="@+id/signelement"
+            android:layout_width="fill_parent"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/signmode"
+            android:layout_width="fill_parent"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/signhouse"
+            android:layout_width="fill_parent"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:gravity="center_horizontal" />
@@ -44,7 +58,7 @@
         android:layout_height="fill_parent">
 
         <TextView
-            android:id="@+id/data"
+            android:id="@+id/signdata"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/body_of_text"

@@ -1,5 +1,10 @@
 package com.danbirks.astrologyandroidapp.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Sign {
 
     private String zodiac;
