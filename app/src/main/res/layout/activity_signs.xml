@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/leowallpaper"
+    android:stretchColumns="*"
+    android:padding="30dp"
+    tools:context=".Signs">
+
+    <TableRow
+        android:id="@+id/firstRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/aries"
+            android:tag="aries"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/aries"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/taurus"
+            android:tag="taurus"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/taurus"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/gemini"
+            android:tag="gemini"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/gemini"
+            android:onClick="sign" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/secondRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:onClick="sign">
+
+        <ImageButton
+            android:id="@+id/cancer"
+            android:tag="cancer"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/cancer"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/leo"
+            android:tag="leo"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/leo"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/virgo"
+            android:tag="virgo"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/virgo"
+            android:onClick="sign" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/thirdRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:onClick="sign">
+
+        <ImageButton
+            android:id="@+id/libra"
+            android:tag="libra"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/libra"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/scorpio"
+            android:tag="scorpio"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/scorpio"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/sagittarius"
+            android:tag="sagittarius"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/sagittarius"
+            android:onClick="sign" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/fourthRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <ImageButton
+            android:id="@+id/capricorn"
+            android:tag="capricorn"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/capricorn"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/aquarius"
+            android:tag="aquarius"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/aquarius"
+            android:onClick="sign" />
+
+        <ImageButton
+            android:id="@+id/pisces"
+            android:tag="pisces"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/pisces"
+            android:onClick="sign" />
+    </TableRow>
+
+
+</TableLayout>

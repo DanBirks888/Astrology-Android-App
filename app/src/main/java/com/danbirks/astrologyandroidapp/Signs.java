@@ -6,27 +6,24 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.danbirks.astrologyandroidapp.restparser.PlanetElement;
+import com.danbirks.astrologyandroidapp.restparser.SignElement;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class Planets extends AppCompatActivity {
-
+public class Signs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planets);
+        setContentView(R.layout.activity_signs);
     }
 
-    public void planet(View view) {
+    public void sign(View view) {
         Bundle b = new Bundle();
         b.putString("element", StringUtils.capitalize(view.getTag().toString()));
-        b.putString("url", "http://10.0.2.2:8080/astrals/planet/");
-        Intent intent = new Intent(this, PlanetElement.class);
+        b.putString("url", "http://10.0.2.2:8080/signs/zodiac/");
+        Intent intent = new Intent(this, SignElement.class);
         intent.putExtras(b);
         startActivity(intent);
     }
-
-
 }

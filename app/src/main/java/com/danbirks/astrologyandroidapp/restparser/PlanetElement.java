@@ -1,4 +1,4 @@
-package com.danbirks.astrologyandroidapp;
+package com.danbirks.astrologyandroidapp.restparser;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,29 +10,33 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
+import com.danbirks.astrologyandroidapp.R;
 import com.danbirks.astrologyandroidapp.model.AstralBody;
 import com.jacksonandroidnetworking.JacksonParserFactory;
 
-public class OneElement extends AppCompatActivity {
+import org.apache.commons.lang3.StringUtils;
+
+public class PlanetElement extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_element);
-        String planet = getIntent().getExtras().getString("planet");
+        setContentView(R.layout.activity_element_planet);
+        String element = getIntent().getExtras().getString("element");
+        String url = getIntent().getExtras().getString("url");
         AndroidNetworking.initialize(getApplicationContext());
         AndroidNetworking.setParserFactory(new JacksonParserFactory());
         jsonParse(
-                planet,
+                url,
+                element,
                 findViewById(R.id.title),
-                (ImageView) (findViewById(R.id.icon)),
+                findViewById(R.id.icon),
                 findViewById(R.id.singleLineMeaning),
                 findViewById(R.id.data));
     }
 
-    private void jsonParse(String planet, TextView title, ImageView icon, TextView slm, TextView data) {
-        System.out.println("???????????????????" + "INSIDE THE JSONPARSE");
-        AndroidNetworking.get("http://10.0.2.2:8080/astrals/planet/" + planet)
+    private void jsonParse(String url, String element, TextView title, ImageView icon, TextView slm, TextView data) {
+        AndroidNetworking.get(url + element)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -40,7 +44,7 @@ public class OneElement extends AppCompatActivity {
                     @Override
                     public void onResponse(AstralBody astralBody) {
                         title.setText(astralBody.getAstralBody());
-                        icon.setImageResource(getResources().getIdentifier(planet, "planet", getPackageName()));
+                        icon.setImageResource(getResources().getIdentifier(StringUtils.lowerCase(element), "drawable", getPackageName()));
                         slm.setText(astralBody.getSingleLineMeaning().toString());
                         data.setText(astralBody.getAttributes());
                     }

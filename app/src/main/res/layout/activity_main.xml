@@ -25,11 +25,12 @@
 
     <ImageButton
         android:id="@+id/signs"
-        android:background="@drawable/signwhite"
+        android:background="@drawable/cancer"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginBottom="35dp"
         android:text="@string/signs"
+        android:onClick="signs"
         app:layout_constraintBottom_toTopOf="@+id/houses"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
