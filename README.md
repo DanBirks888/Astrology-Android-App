@@ -58,3 +58,13 @@ AS = Android Studio
  4. Build Aspect UI and Functionality.
  5. Provide Astral, Zodiac and House data attributes through Aspects.
  
+ ### Screenshots
+ ### Home Page Activity
+ ![AstroAppHome](https://user-images.githubusercontent.com/63508057/106888526-94ca7080-66de-11eb-8627-3e367c5c3ebf.png)
+
+### Planets Activity
+![AStroAppPlanets](https://user-images.githubusercontent.com/63508057/106888258-343b3380-66de-11eb-98d9-d0438f569606.png)
+
+### Single Planet Data
+![AstroAppSun](https://user-images.githubusercontent.com/63508057/106888259-343b3380-66de-11eb-8508-33c1a459e0cf.png)
+ 
